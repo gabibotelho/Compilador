@@ -1,8 +1,10 @@
 package compilador;
 
-import java.awt.Graphics;
-import java.io.IOException;
+import compilador.CalcParser;
 
+import java.io.IOException;
+import compilador.MyVisitor;
+import java.awt.Graphics;
 import java.awt.HeadlessException;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -22,13 +24,14 @@ import org.antlr.v4.runtime.RecognitionException;
 import org.antlr.v4.runtime.TokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 
+
 public class antlrIDE {
-    
+    /*
     public static void main(String[] args) throws IOException {
         new TabbedPanel();
     }
+    */
     
-    /*
     public static void main(String[] args) throws IOException{
         
         System.out.println("Going to exec: input.minic" );
@@ -41,7 +44,7 @@ public class antlrIDE {
         System.out.println(input);
         Integer r = parse(input);
     }
-    */
+    
     
     private static Integer parse(String text) throws RecognitionException {
         ANTLRInputStream input = new ANTLRInputStream(text);
@@ -102,8 +105,4 @@ public class antlrIDE {
         } catch (Exception e) {
         }
     }
-    
 }
-
-        
-
