@@ -18,7 +18,7 @@ PRINT : 'print';
 
 //-------------------------Characters------------------------------//
 fragment LETTER: ('a'..'z' | 'A'..'Z');
-WS: [ \t\r\n]+ ->	channel(HIDDEN);//Whitespace declaration	
+WS: [ \t\r\n]+ -> skip;//Whitespace declaration	
 fragment DIGIT: ('0'..'9');
 CHR : '\''(LETTER|DIGIT|' '|EXC|'"'|'#'|'$'|'%'|'^'|'&'|'*'|LPARENT|RPARENT|PLUS|'_'|MINUS|'?'|'\''|'.'|','|'<'|'>'|':'|';'|'`'|'~'|'@'|'\"') '\''; 
 ID: LETTER(DIGIT|LETTER)*;
