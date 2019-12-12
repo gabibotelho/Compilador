@@ -2,7 +2,7 @@ package compilador;
 
 import java.util.*;
 
-public class CalcTypes extends CalcBaseVisitor<String> {
+public class MyVisitor extends CalcBaseVisitor<String> {
 	public Integer scope_counter;
 	public Stack<SymbolTable> symbolTablePerScope;
 	public ArrayList<SymbolTable> symbolTablePerScopeArray;
@@ -13,7 +13,7 @@ public class CalcTypes extends CalcBaseVisitor<String> {
 	public boolean visitReturnBlock;
 	public boolean visitMain;
 		
-	public CalcTypes(){
+	public MyVisitor(){
 		scope_counter = 0;
 		symbolTablePerScope = new Stack<SymbolTable>();
 		symbolTablePerScopeArray = new ArrayList<SymbolTable>();

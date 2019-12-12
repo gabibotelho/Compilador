@@ -225,7 +225,7 @@ class TabbedPanel extends JFrame {
 		} catch ( IOException e ) {
 		}
 		if(areaError.getText().equals("")){
-			CalcTypes visitor = new CalcTypes();
+			MyVisitor visitor = new MyVisitor();
 			String result = visitor.visit(tree);
 			System.out.println(result);
 			areaError.append(visitor.errors.toString());
