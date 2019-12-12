@@ -8,4 +8,4 @@ a = 10;
 a++;
 b = 10;
 d = a+b;
-printf(d);
+printf(d

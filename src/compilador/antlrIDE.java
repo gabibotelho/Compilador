@@ -1,7 +1,8 @@
 package compilador;
 
+import compilador.CalcParser;
 import java.io.IOException;
-
+import compilador.MyVisitor;
 import java.awt.HeadlessException;
 import java.util.Arrays;
 import javax.swing.JFrame;
@@ -14,15 +15,17 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.TokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 
+
 public class antlrIDE {
 
     public static void main(String[] args) throws IOException {
         //  showParseTreeFrame(prog, parser);
+        
+        String filename = "teste.c";
 
-        String filename = "test.c";
         
-        
-        CharStream charInput = new ANTLRFileStream(filename);
+                    
+        ANTLRFileStream charInput = new ANTLRFileStream(filename);
         CalcLexer lexer = new CalcLexer(charInput);
         
         
@@ -38,10 +41,10 @@ public class antlrIDE {
         //grammarCLexer lexer = new grammarCLexer(stream);            //Lexer
         TokenStream tokens = new CommonTokenStream(lexer);  //nextToken 
         CalcParser parser = new CalcParser(tokens);         //Parser
-        CalcParser.ProgramContext prog = parser.program();        //Exec Parser prog
-        showParseTreeFrame(prog, parser);
+        CalcParser.ProgramContext program = parser.program();        //Exec Parser prog
+        showParseTreeFrame(program, parser);
         MyVisitor pv = new MyVisitor();
-        pv.visit(prog);
+        pv.visit(program);
 
     }
 
